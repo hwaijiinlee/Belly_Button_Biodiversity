@@ -1,15 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Greek gods</title>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bellybutton Biodiversity</title>
+  <link 
+    rel="stylesheet" 
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/style.css">
 </head>
+<style></style>
+
 <body>
-    <div id="plot"></div>
-    <script src="data.js"></script>
-    <script src="plots.js"></script>
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1>Belly Button Biodiversity Dashboard</h1>
+        <p>Use the interactive charts below to explore the dataset</p>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <h4>Overview of Project</h4>
+      <p>Using HTML, CSS and Javascript to visualize bacterial species found in belly buttons of human subjects.</p>
+    </div>
+    <div class="container">
+      <nav class="navbar navbar-expand{-sm|-md|-lg|-xl} navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Home</a>      
+        <a class="navbar-brand" href="#gauge">Gauge</a>          
+        <a class="navbar-brand" href="#bar">Bar Chart</a>
+        <a class="navbar-brand" href="#bubble">Bubble Chart</a>          
+      </nav>
+    </div>
+    <div class="col-md-12">      
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div style="background-color: #00FFFF" class="well">
+          <h5>Select Test Subject ID No.:</h5>
+          <!-- <select id="selDataset"></select> -->
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Demographic Info</h3>
+          </div>
+          <div style="background-color: #F0F8FF;" id="sample-metadata" class="panel-body">          
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <p>The gauge below represents how often the selected human subject wash their belly button every week.</p>
+        <div style="background-color: #F0F8FF;" id="gauge"></div>        
+      </div>
+      <div class="col-md-5">
+        <p>The bar chart below shows the Top 10 bacteria cultures found in the belly buttons of the selected human subject.</p>
+        <div id="bar"></div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p>The bubble chart below shows the amount of bacteria per OTU ID found in the selected subject's belly button.</p>
+        <div id="bubble"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="static/js/charts.js"></script>  
+
 </body>
+
 </html>

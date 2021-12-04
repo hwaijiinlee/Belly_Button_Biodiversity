@@ -1,0 +1,20 @@
+body {
+
+    background-color: #F0F8FF;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif; 
+}
+
+/* div {
+    border: 0.5rem;
+    outline: 0.5rem        
+} */
+
+    
+
+.jumbotron {
+    background-image: url("images/viruses-bacteria-fungi.jpg");
+    background-size: 100% 100%;
+    text-align: center;
+    color: #F0F8FF;
+}
